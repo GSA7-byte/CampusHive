@@ -3,7 +3,11 @@
 CampusHive is a comprehensive, centralized event management platform built for university campuses. 
 It features a distinct cyberpunk-inspired "Stitch" UI aesthetic and provides a robust, role-based system for Students, Organizers, and Administrators to streamline event discovery, registration, and management.
 
-## 🚀 Key Features
+## 🚀 Live Demo
+
+[Access the Live App on Render](https://campushive-frontend-c00s.onrender.com)
+
+## 🛠️ Key Features
 
 ### Role-Based Access Control
 - **Students**: Discover events via a tailored "For You" feed, register, check in using auto-generated mobile QR codes, and earn digital certificates.
@@ -20,7 +24,7 @@ It features a distinct cyberpunk-inspired "Stitch" UI aesthetic and provides a r
 - **Frontend**: React.js, Tailwind CSS (Stitch UI styling), Framer Motion, Zustand (State Management), React Router.
 - **Backend**: Node.js, Express.js.
 - **Database**: MongoDB (Mongoose ORM).
-- **Other Services**: JWT Authentication, PDFKit (Certificates), QRCode (Check-in), Nodemailer (Emails/Password Reset), Html5-Qrcode (Scanner).
+- **Other Services**: JWT Authentication, PDFKit (Certificates), QRCode (Check-in), Nodemailer (Emails/Password Reset), HTML5-QRCode (Scanner).
 
 ## 📂 Project Structure
 This repository contains two main directories:
