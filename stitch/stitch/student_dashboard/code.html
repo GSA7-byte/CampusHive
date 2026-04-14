@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Smart Campus Student Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">SmartCampus</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-md hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-slate-100 dark:bg-slate-800">
+<div class="text-slate-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-base font-normal placeholder:text-slate-500" placeholder="Search events, clubs, or venues" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold leading-none">Alex Johnson</p>
+<p class="text-xs text-slate-500 mt-1">CS Senior</p>
+</div>
+<div class="bg-primary/20 rounded-full size-10 overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" data-alt="Profile picture of a male student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZLpHcFrTJzu5iLx7Vvwvxm4SiFAqA2hZKFK8p5T62fVHMP3w3QzkFxmxjShl7US_jRWWh4MpHV6NLlHsr5nRvc2JRHmHrTO5mkbPi3IrxBl5Gt1I28fjjFp78G3atmglDcoGO7cf_hQe2y6fGr9GC6Oyrz4T81nkAcKjedMzh_Ge5i0royAFbj3jc9GGoUeHDhAaPcRG7paLXyL9tO7k7Ac5iyOfPsEisP568S5XQhMheONcKcSisCRbO4w3S7n_UQ6PJOZXQUccu"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 h-full">
+<!-- Left Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 flex-col justify-between hidden lg:flex h-[calc(100vh-64px)] sticky top-16">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-semibold">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">explore</span>
+<p class="text-sm font-medium">Explore Events</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium">My Schedule</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-sm font-medium">Campus Map</p>
+</a>
+<div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+<p class="px-4 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">My Organizations</p>
+<a class="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<div class="size-6 rounded bg-orange-100 text-orange-600 flex items-center justify-center text-[10px] font-bold">GD</div>
+<p class="text-sm font-medium">GDSC Campus</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<div class="size-6 rounded bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold">DS</div>
+<p class="text-sm font-medium">Debate Society</p>
+</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10 max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-8">
+<!-- Welcome Hero -->
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-slate-50">Welcome back, Alex! 👋</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg">You have 3 events coming up this week.</p>
+</div>
+<!-- My Registered Events (Quick Access) -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">confirmation_number</span>
+                                    My Registered Events
+                                </h2>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+<!-- Quick Ticket Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer">
+<div class="size-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">qr_code_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-primary uppercase mb-1">Tomorrow · 10:00 AM</p>
+<h3 class="font-bold truncate">AI Workshop: Future Tech</h3>
+<p class="text-xs text-slate-500 truncate">Main Hall, Engineering Bldg</p>
+</div>
+</div>
+<!-- Quick Ticket Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer">
+<div class="size-16 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-4xl">qr_code_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-green-600 dark:text-green-400 uppercase mb-1">Thursday · 4:30 PM</p>
+<h3 class="font-bold truncate">Annual Jazz Night</h3>
+<p class="text-xs text-slate-500 truncate">Central Plaza</p>
+</div>
+</div>
+<!-- Quick Ticket Card 3 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer">
+<div class="size-16 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-4xl">qr_code_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase mb-1">Sat · 9:00 AM</p>
+<h3 class="font-bold truncate">Code-A-Thon 2024</h3>
+<p class="text-xs text-slate-500 truncate">IT Innovation Hub</p>
+</div>
+</div>
+</div>
+</section>
+<!-- For You Feed -->
+<section class="flex flex-col gap-6">
+<div class="flex flex-col gap-4">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                                    Recommended For You
+                                </h2>
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-8">
+<button class="border-b-2 border-primary text-primary pb-3 px-1 text-sm font-bold">Based on Interests</button>
+<button class="border-b-2 border-transparent text-slate-500 pb-3 px-1 text-sm font-medium hover:text-slate-900 dark:hover:text-slate-100">Trending Now</button>
+<button class="border-b-2 border-transparent text-slate-500 pb-3 px-1 text-sm font-medium hover:text-slate-900 dark:hover:text-slate-100">Nearby Events</button>
+</div>
+</div>
+<!-- Event Filter Pills -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-4 py-1.5 rounded-full bg-primary text-white text-xs font-bold">All Categories</button>
+<button class="px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:bg-slate-50 transition-colors">Workshop</button>
+<button class="px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:bg-slate-50 transition-colors">Sports</button>
+<button class="px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:bg-slate-50 transition-colors">Arts</button>
+<button class="px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:bg-slate-50 transition-colors">Tech</button>
+<button class="px-4 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:bg-slate-50 transition-colors">Music</button>
+</div>
+<!-- Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Event Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col sm:flex-row h-full">
+<div class="sm:w-48 h-48 sm:h-auto overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Students collaborating in a modern tech workshop space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3xeyS5Jd2oyfuOnHrn7dPUbcX_qV1J8rqz2DZvD2Z3eDCdOqHsKhOcI77WBibH__bfrQ4spaUDa-jRK3I1UfyCfE1ftXnVRlGPMLRM9LyqDrK3pLjnc5Fj9enqnBCHbqaEhia8q4acm0QdqoOEGhcNrqRtn_1HmSdwAcaOeef7SaYvU8HynyjVxNBekLGGVcXYYBC-KjxMw_Fuh221MR6gPazel1vUzkcm_OWyFZxJ-QWxaVcQdm25EkabgZ7ehRfViLJZfky1xRU"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-md">
+<p class="text-[10px] font-bold text-primary">OCT 24</p>
+</div>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Workshop</span>
+<span class="text-slate-400 text-[10px]">• 2h duration</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 group-hover:text-primary transition-colors">UX Design Fundamentals for Startups</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+<p>Digital Arts Lab · Room 402</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuiosraZG0pegwVVvdQnCD4ANCwifZ3kTsx-89Zw9r15IiTROS1bf0hZ0aR2zQA-VZkbCf4PRVGWbES_PuiXnSk6tWSaYTdOQ0uBCdGzZm472XAa7-1YiDf4ylFrBuCTek4e_bRwIoxDxGhDr-aC8n-2IfcN6Ye87pbGCItHn62gAG--PCPJtqRPIsdG1qk5KfDe8pfqYxhU_KNG7BkMqJtasmhLPEPa3SUouV5eHQKb0F6i92GkeVexoMjPPsLIHT_uY0thrjVFpt"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVFazQXcCznjsNwbQusXOsSl-vYNlNn1cv5jYaaQLMcoXpaj-8vOciTbVbxZ7DKM9vUfHQ398lk5WwitbkH04msfE3DFl9J25mg_1e9qaM_bfGNMx_jXnhnRbbERYTd31oyDOSCG4ba-FyqzhPxlxifm-eXQX31VDIF1nlZP1yoj9Vp_J9Shxt_keYjY05FA_RlJ3CIcROpSsjy_h38M2Bd4jA2WeUEQwgzJJdcT0nvbfa8_htrv-xYwhtpcNMc24jJCYOS4jLULEa"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[8px] font-bold">+12</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors">Register</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col sm:flex-row h-full">
+<div class="sm:w-48 h-48 sm:h-auto overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vibrant campus basketball tournament with players" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8XAfV1T3fADl9U4lkv_q3-kBtvhzvVtmJpRZ3Em8kudhH1aE-Yt5qHehNpi8LA4tDn8vua-VH6cati3nhQwJPxD55e13uiGzsIAt7SWZI_Ij7ByIBkP0p_soBOx-DDTZJgMU_RlyzoducbUFZPVcYwKOcE55WoU98LdNSfJVemV6S5bZILjyDP1USQqNJwVz2e_MCpFj03u1XOE-b0Qb0BeeXx7EdTgIUSz1fgil3auw8sVg5V8VSEPeyvKhSbaaHkYLFIiLIpKwK"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-md">
+<p class="text-[10px] font-bold text-primary">OCT 26</p>
+</div>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase tracking-wider">Sports</span>
+<span class="text-slate-400 text-[10px]">• All day</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 group-hover:text-primary transition-colors">Inter-College Basketball Finals</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+<p>South Campus Arena</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8SvpGKXBGUOlRsJzLFGZKGxLLLYOz6DSlTVAIUqwwmZGt4GD_ONjksqYSvrX5sGxPz8uNhbULxwkaYL-cR7qpHZiOa2xGeypcKy9uSYyyPI7mpfKHUbhYeuIZU82HtVWroRl6IUVl4S7XobA7mLAIh7gV8vguMxMJf0rooKxOpkevKtnv1oyd7XbeEXLpYJfSQ4hmp8irmGmjIZj9Nk6wKOqiB76lqOkIDAXD4U6NJPjHshmWzmfTXTb-3XKiO-Q-7Ado7L1nwBP"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-6oytSOyM-PS6zc6v1RhqGz4DLS2aulJJvbwFMIknJNNvZXKaNWqenF6s3ERbYxEJgAZ4yyDcyRFLSDS2rrOFgi7zgB9_PfZ6FBIl2XuJUXYPsVoqFQv8B2lFrAslEtFygQ2FXI4auvfcZxHFCFH3mwwbFfmGfoljSaBsmyy7gmKSblmm_WCmf2snhlsApIbI8-iAiPe1MXO19ATYEXulcXl0r2e3ZHRupea4MD-I5hfw1y2lsGUfBqzlLmzUIKEjUs741F8Eor7L"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[8px] font-bold">+45</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors">Interested</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col sm:flex-row h-full">
+<div class="sm:w-48 h-48 sm:h-auto overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern hackathon venue with giant screen and coders" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnx_rDeN7_Px3wTuJATKfhpnLd3ptmUpqwK88VRtwj8XE5d41djWsPHxRRouRw_tbUgfQPY2We8bhr7UFatwLV50v_uh0wCyQyEP37EZjTnjG4UQTkUFeDbmTdXlk8LSKt_JBm9bFF74nZKtIHA_STp4VlTWeyutNcAFJFXrqyy6Uy530zwPP9uKwvrS6bqMRlIkPh1p34y13H1dNffEiq211WbVSib9EGIZrw_tFj_7vKQgsYQjuyi72KcUjwVDlVdsztPJHpk5-Z"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-md">
+<p class="text-[10px] font-bold text-primary">NOV 02</p>
+</div>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider">Tech</span>
+<span class="text-slate-400 text-[10px]">• 48 Hours</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 group-hover:text-primary transition-colors">Campus Hackathon: AI for Good</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+<p>IT Hub · Main Campus</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZN_-2JNcSx7DIVKUgTFE_DuxB6joaSLbsLJS10ArZOkeB4Nshsy62x6NJPDS85Xa-REYVz3s__XPWX8pbh5BInlt0P6Ve1XEK_OL5tjINJWmdh_hD7gP4cHWVnxx_LWjE3iT3swWtqfw7wxACZfDdv1xNGRHZca0D6ARkGOc1LXtG3KxQliuY3uA0kbmeUV1f0gMzrKngAgXO698B25Bm07piulFis0Gb2079A896RJTN2KgA1Tj5CLYn1eD4z8yk55gHBaifLbFc"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[8px] font-bold">+150</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors">Join Waitlist</button>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group flex flex-col sm:flex-row h-full">
+<div class="sm:w-48 h-48 sm:h-auto overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Colorful festival lights on campus at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx7YX4UxNDyM4FMvZ88nb7aP-_Q2BLnqgDPuKSyfu47MVaYYc4Lv3kLQU_IssPs7SxOAKc3OYACYkjvyQEAZC0NzQycS9PR5YQ4vBNxGw2WLyofxpF2LdyYyeVkJtBEscODZfTCcdTE3nd19h42x_KN0oC-LZCxwr7OWjEzeH-lWg2lLMPiNdxu1GmC3m_1qbZR3DOl3H8jg1yrH6aas8R7F7R52r1D0rgFquai-R0FHJP6hn-VFOoUoewfD6jUm08v973mTXcqDPn"/>
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded-md">
+<p class="text-[10px] font-bold text-primary">NOV 05</p>
+</div>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase tracking-wider">Arts</span>
+<span class="text-slate-400 text-[10px]">• 6:00 PM - 10:00 PM</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-2 group-hover:text-primary transition-colors">Autumn Cultural Festival</h3>
+<div class="flex items-center gap-1 text-slate-500 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+<p>Lakeside Pavilion</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden"><img data-alt="Student profile 6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Gffveh4OQvbje2Ea8Q-6-lPGGdqLwg3SY-yiaOyB4PNLa2vtvsx6T2s4U_8X4wLJoxHokpEHu2r2kER1EwfFC-mQId4Kp7OX-fqd3T2iKQduGx9w-zX_YjIBYX9iVD0Uyz8oKr7NF605CCXfYL_l_nk8enTSRNB2YshW7mg2_zH6xUR-12oftn1DdlN_pGUab1Ut2aItZiwPTqDBmsUvpdDN3UVvUM3MN8Dxajid5fJFXO6YNb1QHh3IWgRBQprjU5K0BBMDpNlG"/></div>
+<div class="size-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[8px] font-bold">+89</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors">Register</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Notifications Sidebar -->
+<aside class="w-80 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex flex-col gap-6 hidden xl:flex h-[calc(100vh-64px)] sticky top-16 overflow-y-auto">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold">Activity</h3>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-500">more_horiz</span>
+</button>
+</div>
+<!-- Notification Groups -->
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">celebration</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold leading-tight">Registration Confirmed!</p>
+<p class="text-xs text-slate-500 mt-1">You're all set for the UX Design Workshop tomorrow.</p>
+<p class="text-[10px] text-slate-400 mt-2 font-medium">10 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<div class="size-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400 shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold leading-tight">New Message from GDSC</p>
+<p class="text-xs text-slate-500 mt-1">"Hey everyone, the pre-read material for the next session is..."</p>
+<p class="text-[10px] text-slate-400 mt-2 font-medium">1 hour ago</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<div class="size-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold leading-tight">Sarah joined "Hackathon Team Alpha"</p>
+<p class="text-xs text-slate-500 mt-1">Your team for Code-A-Thon is now full.</p>
+<p class="text-[10px] text-slate-400 mt-2 font-medium">3 hours ago</p>
+</div>
+</div>
+</div>
+<!-- Quick Action Card -->
+<div class="mt-4 p-4 rounded-2xl bg-gradient-to-br from-primary to-blue-700 text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-bold mb-1">Create an Event</h4>
+<p class="text-xs text-primary-100 opacity-90 mb-4 leading-relaxed">Planning a club activity or a study group? List it here!</p>
+<button class="w-full bg-white text-primary py-2 rounded-lg text-xs font-bold hover:bg-primary-50 transition-colors">Start Planning</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">event</span>
+</div>
+</div>
+<!-- Campus Map Shortcut -->
+<div class="mt-2 flex flex-col gap-3">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-400">Campus Status</p>
+<div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<p class="text-xs font-medium">Main Library Hub</p>
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[8px] font-bold">Quiet</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[35%]"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2">Capacity: 35% Full</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<p class="text-xs font-medium">South Food Court</p>
+<span class="px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 text-[8px] font-bold">Busy</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full w-[85%]"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2">Capacity: 85% Full</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</body></html>

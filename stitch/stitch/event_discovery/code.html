@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>CampusEvents - Discovery</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">rocket_launch</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100">CampusEvents</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-semibold text-sm hover:opacity-80 transition-opacity" href="#">Discover</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium text-sm hover:text-primary transition-colors" href="#">My Events</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium text-sm hover:text-primary transition-colors" href="#">Calendar</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto w-full px-4 md:px-10 py-8 space-y-8">
+<!-- Hero Search Section -->
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100">Find your next experience</h1>
+<p class="text-slate-500 dark:text-slate-400">Discover workshops, cultural fests, and technical hackathons across campus.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-4">
+<!-- Search Bar -->
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-base shadow-sm" placeholder="Search for events, clubs, or speakers..." type="text"/>
+</div>
+<!-- Date Picker (Styled as Button Trigger) -->
+<button class="flex items-center gap-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-6 py-4 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="font-medium">Oct 15 - Oct 30</span>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+<h3 class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">tune</span>
+                        Filters
+                    </h3>
+<button class="text-sm text-primary font-medium hover:underline">Clear all</button>
+</div>
+<div class="flex flex-wrap gap-3">
+<!-- Categories -->
+<button class="px-5 py-2 rounded-full bg-primary text-white font-medium text-sm flex items-center gap-2 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">category</span> All Categories
+                    </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all">
+                        Technical
+                    </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all">
+                        Cultural
+                    </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all">
+                        Sports
+                    </button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all">
+                        Workshop
+                    </button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-1 self-center"></div>
+<!-- Departments -->
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all flex items-center gap-2">
+                        Computer Science <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium text-sm hover:border-primary/50 hover:text-primary transition-all flex items-center gap-2">
+                        School of Arts <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Event Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Event Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Tech conference audience with bright stage lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQwX_yJ_obcyfS0H7XfGeK7YqcnaMNjcrHln6v2u-CqfX18NK7ChdQHeWgQK8Wit-dE3NeDvsCAjvdOSsm6-5YTkz5qIfLIabYsIoNJidVjYhZD2OfkZXIFkyR9EcgexlYgIxeQ-69wS19Vcf4bevANbGxh9KUXPK4XUMrVzrw9IYBCuT_-uBNkGLqJ9EzfrDWl7EoC2Bh5s9_UbjrsBTmZD8Ima0GbKhUyKLzRckXRC2MrvTIBh3NpHxjE1MA-Ogs1DuWA23coNrw');"></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Technical</div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-1 text-center min-w-[40px]">
+<p class="text-[10px] font-bold text-slate-500 leading-none">OCT</p>
+<p class="text-lg font-bold text-slate-900 leading-tight">22</p>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Global Hackathon 2023</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Main Innovation Lab</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>09:00 AM - 06:00 PM</span>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg transition-colors text-sm">Register</button>
+<button class="px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Colorful outdoor music festival scene" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByXKnTGmLhqQnGZLT8h80zHdQhsoUuS2dtq262msTlvfz5jjT5mij8OociRGGrFTlIT5VPmvnPj72alTpPKG2cSyfmAYoJLMhe60aeSyBSpySr-NowTTZuXOJYn0Jc6W09VdZmzYlqCdzOHYkV7NXY5xLvRpaMG29eHEvJRSU5LItAymbcCieNCIKTKqjkP9pFQTvK6Q_n921eec0CU58sGFdY7KUaaeyawke4GIhcxOuUkEpss7zs-1GS0goNiNlLUqBnGeXbYu5y');"></div>
+<div class="absolute top-3 left-3 bg-pink-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Cultural</div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-1 text-center min-w-[40px]">
+<p class="text-[10px] font-bold text-slate-500 leading-none">OCT</p>
+<p class="text-lg font-bold text-slate-900 leading-tight">24</p>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Rhythm &amp; Arts Night</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Campus Amphitheater</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>06:30 PM - 10:00 PM</span>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg transition-colors text-sm">View Details</button>
+<button class="px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Athletes running on a track field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnW7Jmy5ivOpGGaQm47FonGlJjEHkZDHUiUL0EcLsCuYT4xM0V7F8kzpT3YFxYqGjyHQEVcfV59dyIMCP37yxJgj_5kxOyqCLtb20MHTFkDZh-8ot8sQspJ2eCE9WgKI35v0TsWNA6SNqeBtb6GxzmVQHPwnrIiCbZvrI8ws0njqnZPuZJDjpLP9OEHZifLBYloIb21yvsTRechzJ6LyIzqQ0ZZ8Z31J8kWaY7EHYOWe4DXKz8cKQOXVNQWVzzWCribFwLhyKpMQQP');"></div>
+<div class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Sports</div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-1 text-center min-w-[40px]">
+<p class="text-[10px] font-bold text-slate-500 leading-none">OCT</p>
+<p class="text-lg font-bold text-slate-900 leading-tight">26</p>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">Inter-Campus Athletics</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Main Stadium</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>07:00 AM - 04:00 PM</span>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg transition-colors text-sm">Register</button>
+<button class="px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="People collaborating around a laptop in a bright office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCxIcp7WRkVd4YmG-QD2sEdghKZuc3EFy5ymPv6hqax2OEfYi7GA2YdNEcWVy6cgGyfvYWuafA-3Dd_UdWGFmFU4x5dS8SU5wEP1D96NgqpbzaXayb5Nc4IHh5D79RKxf2Kw-kDpMsj_IqYNUabHjOzV76bdqJI-MJs2qyOruq-Ap5Hj1W7NnFowyQF1-MKYUSg2dNIRxQ5jItjgvOsI_Tnf_1w_ETNScCnOc0iWprTiywsArRIWXi_n4BcuUphyYFeIlQiUo21KU0');"></div>
+<div class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Workshop</div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-1 text-center min-w-[40px]">
+<p class="text-[10px] font-bold text-slate-500 leading-none">OCT</p>
+<p class="text-lg font-bold text-slate-900 leading-tight">28</p>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">UX Design Mastery</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Design Studio B</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>02:00 PM - 05:00 PM</span>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg transition-colors text-sm">Register</button>
+<button class="px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Event Card 5 (Repeated Style for Grid Fill) -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A presenter leading a business workshop session" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0d4amun8FavYyRv8rlClWVXqGGAN1_kGK9WoaU-fY72adHm4gDV97z9-owR9irc6s5Deb5EJIzf1XfNqwLcHA6jiD7EDQUVYmftkkHuYu3pq2i5U1dmkFlkLeVaXjANZlol5ma19w-TvJfk_I2PbZxvwicXpwJ7Bm4j67zTyLWIaE6KiZ6ghuxSD6cD2SeMoE4hlo1RLgD_Tlrg7Qa3yc8-kyExmgyPCMG8iRnRhUmOY7pNEHtQMvphu35pxF5Kfm_Kd0II9KPoLf');"></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Technical</div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg p-1 text-center min-w-[40px]">
+<p class="text-[10px] font-bold text-slate-500 leading-none">OCT</p>
+<p class="text-lg font-bold text-slate-900 leading-tight">30</p>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">AI Ethics Seminar</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">location_on</span>
+<span>Auditorium 2</span>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>10:00 AM - 12:00 PM</span>
+</div>
+<div class="pt-4 flex items-center gap-2">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold py-2 rounded-lg transition-colors text-sm">Register</button>
+<button class="px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading More -->
+<div class="flex justify-center pt-8">
+<button class="flex items-center gap-2 px-8 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-all border border-slate-200 dark:border-slate-700 shadow-sm">
+                    Load More Events
+                    <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 py-12 px-4 md:px-10 bg-white dark:bg-slate-950">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2 space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl font-bold">rocket_launch</span>
+<h2 class="text-lg font-bold">CampusEvents</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm">The all-in-one platform for campus life. Stay updated with the latest events, workshops, and student activities.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Event Guidelines</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Follow Us</h4>
+<div class="flex gap-4">
+<a class="size-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="size-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2023 Smart Campus Systems. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Cookies Settings</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

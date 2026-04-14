@@ -1,0 +1,23 @@
+
+C:\Users\KIIT0001\Downloads\Minor_Project\client\src\components\common\Navbar.jsx
+  26:15  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  24 |
+  25 |   useEffect(() => {
+> 26 |     if (user) fetchNotifications();
+     |               ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  27 |   }, [user]);
+  28 |
+  29 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\Users\KIIT0001\Downloads\Minor_Project\client\src\pages\admin\Dashboard.jsx
+  7:10  error  'useAuth' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 2 problems (2 errors, 0 warnings)
+

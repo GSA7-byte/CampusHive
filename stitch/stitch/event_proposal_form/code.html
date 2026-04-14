@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Campus Event Proposal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1142d4;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Campus Event Hub</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8 px-4 sm:px-10">
+<div class="layout-content-container flex flex-col max-w-[1000px] flex-1">
+<!-- Stepper Progress -->
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm font-bold">2</span>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-semibold">Logistics &amp; Venue</p>
+</div>
+<p class="text-slate-500 text-sm font-medium">Step 2 of 3</p>
+</div>
+<div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 66%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Form Content (Left 2 Columns) -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Step 2 Section -->
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                Venue &amp; Scheduling
+                            </h3>
+<div class="space-y-6">
+<!-- Venue Selection -->
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Preferred Venue</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="relative group">
+<input checked="" class="peer hidden" id="v1" name="venue" type="radio"/>
+<label class="flex flex-col p-4 border-2 border-slate-200 dark:border-slate-800 rounded-xl cursor-pointer peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all" for="v1">
+<span class="font-bold">Grand Auditorium</span>
+<span class="text-xs text-slate-500">Capacity: 500 People</span>
+</label>
+</div>
+<div class="relative group">
+<input class="peer hidden" id="v2" name="venue" type="radio"/>
+<label class="flex flex-col p-4 border-2 border-slate-200 dark:border-slate-800 rounded-xl cursor-pointer peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all" for="v2">
+<span class="font-bold">Innovation Lab</span>
+<span class="text-xs text-slate-500">Capacity: 50 People</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Date and Time -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<label class="flex flex-col">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Event Date</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">calendar_today</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" type="date" value="2023-11-24"/>
+</div>
+</label>
+<label class="flex flex-col">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Start Time</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">schedule</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" type="time" value="14:00"/>
+</div>
+</label>
+</div>
+<!-- Availability Logic UI -->
+<div class="p-4 bg-primary/5 rounded-lg border border-primary/20">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="font-medium text-slate-900 dark:text-slate-100">Check Availability</span>
+</div>
+<button class="text-sm font-bold text-primary hover:underline">Refresh Calendar</button>
+</div>
+<!-- Mini Calendar Simulation -->
+<div class="grid grid-cols-7 gap-1 text-center text-[10px] mb-3">
+<div class="text-slate-400">M</div><div class="text-slate-400">T</div><div class="text-slate-400">W</div><div class="text-slate-400">T</div><div class="text-slate-400">F</div><div class="text-slate-400">S</div><div class="text-slate-400">S</div>
+<div class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">20</div>
+<div class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">21</div>
+<div class="p-1 rounded bg-red-100 text-red-600 font-bold">22</div>
+<div class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">23</div>
+<div class="p-1 rounded bg-primary text-white font-bold">24</div>
+<div class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">25</div>
+<div class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">26</div>
+</div>
+<p class="text-xs text-slate-500">
+<span class="inline-block w-2 h-2 rounded-full bg-primary mr-1"></span> Selected slot is currently available.
+                                    </p>
+</div>
+</div>
+</section>
+<!-- Navigation Buttons -->
+<div class="flex justify-between items-center pt-4">
+<button class="flex items-center gap-2 px-6 py-3 font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                                Previous Step
+                            </button>
+<button class="flex items-center gap-2 px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+                                Next: Resources
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Side Info Panel (Right Column) -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                Proposal Summary
+                            </h4>
+<div class="space-y-4">
+<div>
+<p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Event Title</p>
+<p class="text-sm font-medium">Global AI Ethics Symposium 2024</p>
+</div>
+<div>
+<p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Category</p>
+<p class="text-sm font-medium">Educational / Workshop</p>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<div class="flex items-start gap-3 text-sm text-slate-500">
+<span class="material-symbols-outlined text-sm mt-0.5">help</span>
+<p>Your proposal will be reviewed by the Campus Event Committee within 3 business days.</p>
+</div>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="Campus auditorium with modern lighting and seating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZrw-8kk3DAkYR5ZxzClpGDY2ecvCRaA_SWQzcKKFLwEwuy_5Ho6sT890p1Yf1LBGTqoNUejnofVpX_YNpovBL7fskPeNKlwETH6p1n5ZYx1D9-JHGXzgCytMRRu9uAMIAUcByseAhoxAj-UjtNHgfroaYXierfQzBwtWbwI2fK-fokfoae8F3VpV1VpOC6psyg05CTk8tpUGF9Fyd9ga9JVzJHNNFWSBMaBcuGTRLlEV1FjU5PX-IftYuvgHgp3chyAaYe8HYtAzX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-4">
+<p class="text-white text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                    Venue Preview: Grand Auditorium
+                                </p>
+</div>
+</div>
+<div class="bg-primary/10 p-6 rounded-xl border border-primary/20">
+<h4 class="font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">bolt</span>
+                                Smart Tips
+                            </h4>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400 leading-relaxed">
+<li class="flex gap-2"><span class="text-primary">•</span> Evening slots usually get 40% higher student turnout.</li>
+<li class="flex gap-2"><span class="text-primary">•</span> The Grand Auditorium has built-in live streaming equipment.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Footer Stats / Links -->
+<footer class="mt-16 py-8 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<p class="text-slate-400 text-xs font-bold uppercase mb-2">System Status</p>
+<div class="flex items-center justify-center md:justify-start gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium">All Campus Venues Online</span>
+</div>
+</div>
+<div>
+<p class="text-slate-400 text-xs font-bold uppercase mb-2">Support</p>
+<a class="text-sm font-medium text-primary hover:underline" href="#">Contact Campus Registrar</a>
+</div>
+<div>
+<p class="text-slate-400 text-xs font-bold uppercase mb-2">Privacy</p>
+<p class="text-sm font-medium">GDPR &amp; FERPA Compliant</p>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Event Discovery Redesign</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex flex-col w-full overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 md:px-10 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">rocket_launch</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">EventsNow</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1" href="#">Discover</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Calendar</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Saved</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden sm:block bg-slate-100 dark:bg-slate-800 rounded-xl p-1">
+<div class="flex items-center px-3 gap-2">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400" placeholder="Quick search..." type="text"/>
+</div>
+</div>
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ov0TixyX-__quccw-Oq3hWrDP9-jTN4_ozF_0dL20BS3UAoTQg6Bn6He1U_qOZLyQig22CzHopS1aQTWwjmylWKRIOr1u_c-Sp0eauvmIRsQUMYQ9_SWGI9ID7HmgS2NzmEq9G7W0QdwY4YKhXRuHHPFuX6uMHfq1DU0uhENIh5M3UraUVYEe9XpS1zR6Q1AiExuLARO0H21q6nI1hqo1szZd4Mnd61Q5WI4iaFte9fR0nsX56Ewk7dob0tUHGlZqOue1ywLMsMH"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto w-full px-4 md:px-10 lg:px-40 py-8">
+<!-- Search and Date Picker Section -->
+<div class="flex flex-col lg:flex-row gap-6 mb-10">
+<div class="flex-grow">
+<label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2 px-1">Find your next experience</label>
+<div class="flex items-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 h-14 px-4 overflow-hidden focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary text-2xl">search</span>
+<input class="flex-grow border-none focus:ring-0 bg-transparent text-lg px-3 placeholder:text-slate-400" placeholder="Concerts, tech meetups, workshops..." value=""/>
+<button class="bg-primary text-white px-6 py-2 rounded-xl font-semibold hover:bg-primary/90 transition-all hidden sm:block">Search</button>
+</div>
+</div>
+<div class="lg:w-[350px]">
+<label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2 px-1">When are you going?</label>
+<div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-3 h-14 flex items-center justify-between cursor-pointer hover:border-primary/40 transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="font-medium">October 2023</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Inline Calendar View (Togglable in a real app) -->
+<div class="mb-10 bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+                    Selected Month
+                </h3>
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-900 rounded-xl p-1">
+<button class="p-2 hover:bg-white dark:hover:bg-slate-800 rounded-lg transition-all shadow-sm">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<p class="font-bold text-sm min-w-[100px] text-center">October 2023</p>
+<button class="p-2 hover:bg-white dark:hover:bg-slate-800 rounded-lg transition-all shadow-sm">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Sun</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Mon</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Tue</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Wed</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Thu</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Fri</div>
+<div class="text-center text-xs font-bold text-slate-400 py-2 uppercase tracking-widest">Sat</div>
+<!-- Spacer for start of month -->
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">1</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">2</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">3</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">4</button>
+<button class="aspect-square flex flex-col items-center justify-center rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 relative">
+                    5
+                    <div class="absolute bottom-1 size-1 bg-white rounded-full"></div>
+</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">6</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">7</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium bg-primary/10 text-primary border border-primary/20">8</button>
+<button class="aspect-square flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors font-medium">9</button>
+<!-- ... other days ... -->
+<div class="aspect-square flex items-center justify-center text-slate-300">...</div>
+</div>
+</div>
+<!-- Category Filters -->
+<div class="flex flex-wrap items-center gap-3 mb-10 overflow-x-auto pb-4 no-scrollbar">
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-primary text-white font-semibold whitespace-nowrap shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+                All Events
+            </button>
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 font-medium hover:border-primary/40 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-xl text-blue-500">music_note</span>
+                Music
+            </button>
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 font-medium hover:border-primary/40 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-xl text-purple-500">biotech</span>
+                Tech
+            </button>
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 font-medium hover:border-primary/40 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-xl text-orange-500">palette</span>
+                Art
+            </button>
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 font-medium hover:border-primary/40 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-xl text-green-500">restaurant</span>
+                Food
+            </button>
+<button class="flex items-center gap-2 h-11 px-6 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 font-medium hover:border-primary/40 transition-all whitespace-nowrap">
+<span class="material-symbols-outlined text-xl text-yellow-500">groups</span>
+                Networking
+            </button>
+</div>
+<!-- Events Grid -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight">Upcoming Events</h2>
+<p class="text-slate-500 text-sm font-medium">Showing 124 results</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Event Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Crowd at a vibrant music concert with lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsNrNhvFVLAb8XbHkX71VLefHuWp7NOfZpWNHmyBnQY8Wga8zaNWh3eJd0S60wC3rIMnz-KJ_XMEts9npGZ0JTF2sN7qJkT21fkWIAiAn_M3iC71Y8X2eQ7z7m70izpgv9TxDIshey9v-gZUELLrmyiFpLZvw0sLk1Hcg-CDCLklxX_vlLjj0bwnHz3rfos3tCAoATJtcvB7QQUTbdL4gQReGwjfNW4H02lz-MIqfqNcrNlSsmlTG0vBNG0sXMBJhGX5i1CIwU8rQF"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full uppercase">Music</span>
+<span class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase">Hot</span>
+</div>
+<button class="absolute top-4 right-4 size-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary font-bold text-sm mb-2">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+                        Oct 12, 2023 • 8:00 PM
+                    </div>
+<h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">Neon Pulse Music Festival</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                        Skyline Arena, Downtown
+                    </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-700 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Female attendee profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3G5udiVSw8Y-01-sjUK-1Xxyy8Q5aV5favLA4RHLdwsM19Fnh-BMXhLF_61kJqq9-yMamxi4Nbc6YO6txluWuR9y9XC5YDLAq4lr3TvVuLS0Wyq68bIQDUz6PgVJ12KwZfQMjxaDsmhiz7r6EevB3qfQLiIAilMQl9Suv9w1D31M_aczzcjheWEBNO0_2LpjwJNI9-9CONZL6g_PK2ah5apLqEtQIKjcQGZL1KP5Sn8EZEGLGr9g6icqL5wYJRuI-KwRmvogdAxVN"/>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Male attendee profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQW8wboe_Zl7eLsanQe7K1RXefZN5MKbNbdF3Brm0LqbR1P7gQWMZZn83_2xmdjJu5PC4zfmPjJHuYGuUIpqnLxKGVr6Be_bzxVm9D1Od-jpGp3GTBXQWJLz_G_i2Avj_7BOE60LR26hP7_5kJIldhd4KmK_JwaU9tzdImqJRr_OwWc6ssQqU13baKao6oH7sxMaz9eAKdtocRLM8MEDLJh_-pS9tnMpH1hoE4M12ci-6OHaWbN68brU-ow2kjgnUO1qbCMy1dxZmB"/>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-900 flex items-center justify-center text-[10px] text-white font-bold">
+                                +12k
+                            </div>
+</div>
+<p class="font-bold text-lg text-primary">$45.00</p>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern office space with people networking and tech screens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP5RGcS0sRlm8hvLjtde7lmke0tRgqwHeL-NANJqkxatuCUcC4UNz3Pk6NnYGxuxBQUy5ahsCgT0gs5b8tnIRLs4kfugbsX2bbcx6t87sToWfGeNBrFG6TbxsiqTQhrICRYAzusct5lYwIIW80lfpMAwIioaIXtjk_o66yOAlqTE6SjI98jOzj3sj4CQud1iW4citswNSyI-KqaqDp7c2e4R0g8g0hiQOG_rZtMVq9faeoG7W00FQkGxG_S25yeey4knoHCRCA-OSx"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full uppercase">Tech</span>
+</div>
+<button class="absolute top-4 right-4 size-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary font-bold text-sm mb-2">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+                        Oct 15, 2023 • 10:00 AM
+                    </div>
+<h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">AI &amp; Future Frontiers 2023</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                        Innovation Hub, Tech District
+                    </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-700 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Tech professional avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBmo-jtiihi0msE-RBMI-6x_QEr37s9aOfaxOpfaUvYMDVtXdKLTxTSjy75BzLEywahsaDUje-6_5FoO3saWeUzVb1ecGucNyec1dfLBZvX3Pan7qNgHAj8Rq_vcprpn0z8OnO0pasVNVp0dCK_lq7oFbNCTibfC4TIVIizERkAFlVLBTzaX59CAegG1mXjPKzTzSPDOmPmwN8mgp69CI7PsuHdlPROfb28YKlsY-Jf1MguyS3g_dz_ovhxAjcE1C4UBzOKAmKoxu"/>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-900 flex items-center justify-center text-[10px] text-white font-bold">
+                                +800
+                            </div>
+</div>
+<p class="font-bold text-lg text-primary">Free</p>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Plated gourmet food with creative presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeHbMTHwTK9B_w7OxoGiH7Jz4pxoM4SVK4oz3UgRRIqi8zIQxpue7l_pWBchJIKY0gk82mDfZfZay52F_jBZ_lR3AmaIykIcCPZI5bgblrwyNFb6L0MGBpw0sTqvv4STwy308qscNCPxM5Ay08W3j6N-kJTJbCIIcDkRg7t1rcNepgEfI2LF4oRvPQX1FKkY9AVTbADk7Mr0h64qYbe9dEChmYbmKAZZ-kXmZMcqk_MNxeUG1bI_DiOaAJXyzUIHpsZRVEbtfhTk3k"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full uppercase">Food</span>
+<span class="bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase">Exclusive</span>
+</div>
+<button class="absolute top-4 right-4 size-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-slate-900 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary font-bold text-sm mb-2">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+                        Oct 20, 2023 • 7:00 PM
+                    </div>
+<h3 class="text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">The Art of Fine Dining</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span class="material-symbols-outlined text-base">location_on</span>
+                        Maison Grand, Uptown
+                    </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-700 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Gourmet chef avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAATk_GClYZ_cci741uw7Qa1h68t8JMhfA5OL2rC5EU3wfkojKv56GMSU6sgH1Ll9iTFAeMqCG5mrNa8wxbVQoDKgdzSrL24hUE6v87H0wUVeqGOCcl2-lrzTViiA6ne-ESjVRjqe0TC03dZTEz6PRKXDW5bw1AeWnXELmYzJc94rTU452JQSF3qKJDhZ9NcYMgYFeModguVzf4S46FXxztWmSybpXz2TWbV-JedhhvAWNQXesKo73fzW2u-1kEc0jpZDiOYoxO9ihD"/>
+</div>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-900 flex items-center justify-center text-[10px] text-white font-bold">
+                                +150
+                            </div>
+</div>
+<p class="font-bold text-lg text-primary">$120.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-16 flex flex-col items-center gap-4">
+<button class="px-10 py-4 bg-white dark:bg-slate-800 border-2 border-primary text-primary font-bold rounded-2xl hover:bg-primary hover:text-white transition-all shadow-lg shadow-primary/5">
+                Load More Events
+            </button>
+<p class="text-slate-400 text-sm">You've viewed 3 of 124 events</p>
+<div class="w-64 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="w-[2.4%] h-full bg-primary"></div>
+</div>
+</div>
+</main>
+<!-- Map View CTA (Floating) -->
+<button class="fixed bottom-8 right-8 z-40 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-4 rounded-full font-bold shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">map</span>
+        Map View
+    </button>
+<!-- Simple Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 py-12 px-10 border-t border-slate-200 dark:border-slate-800 mt-20">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-primary grayscale opacity-70">
+<span class="material-symbols-outlined text-2xl font-bold">rocket_launch</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-white">EventsNow</h2>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary" href="#">About</a>
+<a class="hover:text-primary" href="#">Support</a>
+<a class="hover:text-primary" href="#">Terms</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+</div>
+<div class="flex gap-4">
+<div class="size-8 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">share</span>
+</div>
+<div class="size-8 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">mail</span>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+</body></html>

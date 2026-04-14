@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1142d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Smart Campus - Event Details</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-white">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-primary">Smart Campus</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold text-primary" href="#">Events</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Calendar</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">My Tickets</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+<div class="h-8 w-8 overflow-hidden rounded-full border-2 border-primary">
+<img alt="Profile" data-alt="User profile avatar smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0AluvM88ebAqFBF1ycjKUcfmrr1AMyAVAxVXIW2wSlTha4V6IGGzVDasCJlNmscBgBKe-OX-7EDdebxTYJ6Z4D0htkpAa2V8TpLdd-XBT5jtnCA_IsM45Qf77BPvKUYq1vtOonRBPP7r3GKTCHgi4Uwq3BwzjWtWYTl8RIyD53sQ2k7re9qrMyraYG4yqF3LGA9aj0GkVS_VLprgDjiIJdffyyznVWnOTWW4d60CbWtwqCZAyqNp0zduDhon1UJ4yRHN9yxU9vGPy"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="mx-auto max-w-7xl w-full px-4 py-8 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+<!-- Left Column: Event Info -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Hero Section -->
+<div class="overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-sm">
+<div class="relative h-64 w-full sm:h-96">
+<img class="h-full w-full object-cover" data-alt="Modern university lecture hall with neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe32D6ui_icF__RW66bgi1RUHLgP1HSKhbeTTD7B5T-heYrEh7auWlDND87aFjkJo2xYZFtMn0rpefT5psMoJXcR1G7LdhVAR79ypzEf1T6pxpvhClHz7Q--YmYV9uDh6YBrJAc_jBorxhW5ZGgZWkpJxrexjlN5rl0R5T6TcWiP0votIYRLZF_6jkekENaKU-Ojc0i3LveeMDh2NBCWrACOURbCmqn9BjKU7Gm8_59_vzJUomVC_sYI49iCm0I7O74gF5dqJU2QQf"/>
+<div class="absolute bottom-4 left-4 rounded-lg bg-primary px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                                Tech Summit
+                            </div>
+</div>
+<div class="p-6 sm:p-8">
+<h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">AI &amp; Future of Education Summit 2024</h1>
+<div class="mt-6 flex flex-wrap gap-6 border-y border-slate-100 dark:border-slate-800 py-6">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="text-xs font-medium text-slate-500 uppercase">Date</p>
+<p class="text-sm font-bold">Oct 24, 2024</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-xs font-medium text-slate-500 uppercase">Time</p>
+<p class="text-sm font-bold">09:00 AM - 05:00 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs font-medium text-slate-500 uppercase">Venue</p>
+<p class="text-sm font-bold">Main Auditorium, Block C</p>
+</div>
+</div>
+</div>
+<div class="mt-8 space-y-4">
+<h3 class="text-xl font-bold">About the Event</h3>
+<p class="leading-relaxed text-slate-600 dark:text-slate-400">
+                                    Discover how artificial intelligence is reshaping the landscape of higher education. This one-day summit brings together leading researchers, industry experts, and students to discuss the ethical, practical, and innovative applications of AI in learning and campus operations.
+                                </p>
+<ul class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Hands-on AI Workshops
+                                    </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Networking Luncheon
+                                    </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Industry Panel Discussion
+                                    </li>
+<li class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Certificate of Participation
+                                    </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Speakers Section -->
+<div class="space-y-4">
+<h3 class="text-2xl font-bold">Featured Speakers</h3>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-900 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<img class="h-16 w-16 rounded-full object-cover" data-alt="Professional woman in business attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCMUMyfLcqzajgh23y4SDS57y-TWwSn0RsTVreh8KVQLwMFtOR3MrsKkB1ZMk3l_yF5RV635xW9uYDfR9N3yCQ-qOc6CDF7lGpxpHYE6AKgMQMVwrAVqffj2502QgpC0-4Aq5TB5Ik_px5Cv_lXjzaP7ZgDn3-rNly8fpOW4fpD0xnFqZe2DoMF6ArB_LWb636lGJIVxbWBd_kLkWBPfet8Cjq45SPyXHiEBl61EQULrSuY4vM3XK_LFAFbnMh9w5q-aGPVmEL_F6V"/>
+<div>
+<h4 class="font-bold">Dr. Sarah Jenkins</h4>
+<p class="text-xs text-slate-500">Head of AI, FutureLab</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-900 p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<img class="h-16 w-16 rounded-full object-cover" data-alt="Man in glasses and casual professional clothing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX8MkDQGZmbCak7R_JaG40Ft_62GtGw_VOetM5Jdn1XrAHc1B0cCqvKLEq0wWRPk8gWGKL1EintDl-nn0NXCyANSvZHMiVom2qUp7zTRyU2tLUYf3mLeRk9ub7KObyLcy1NWFqlWb7426V3J8OZ0SW4Tsf1NRSshZFp56xLN1F30Nrpng7-w9g08seTbJMxslsO15mqq3zAC8jy6m6CRUUZXSGae2Rezx8CYX2hDBPHyZqDQZ_yqdFT8dlFbdJKYk_UF6gbOJ9vAY6"/>
+<div>
+<h4 class="font-bold">Prof. Marcus Chen</h4>
+<p class="text-xs text-slate-500">Computer Science Dept.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Venue Details -->
+<div class="rounded-xl bg-white dark:bg-slate-900 p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="mb-4 text-xl font-bold">Venue &amp; Map</h3>
+<div class="aspect-video w-full rounded-lg overflow-hidden relative">
+<img class="h-full w-full object-cover grayscale opacity-50" data-alt="Digital map showing campus location pins" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6CxhEdlqPCwjCVpf499AAYN3g6EI3l9dAEloI177bxu9M70q1d7AsFZ3E9kKskd5IpPnCfhCmR-peB1wbG0rE4ZBD6E64fCoK_WTHCxxrlpcFbaz0mXvADstLu6i-R9A3KviVUUYmKa3HV2pTBHVXqH-IDADz1Y7yTsfLKesxzq4dcmdDHMdv6lk3JguDKhI4zBivVS2XaOyFZ-ofeNiUERZxIrfQZVLOqI5w2nh63j2A4KFpMwcoOUyQgsKSv2IS-HWUWjbu9zsx"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-5xl text-primary animate-bounce">location_on</span>
+<div class="rounded bg-white px-2 py-1 text-xs font-bold text-slate-900 shadow-lg">Main Auditorium</div>
+</div>
+</div>
+</div>
+<p class="mt-4 text-sm text-slate-500">
+                            The event will take place in the newly renovated Main Auditorium. Please use the East Gate entrance for the most direct access to parking Lot B.
+                        </p>
+</div>
+</div>
+<!-- Right Column: Registration/Summary -->
+<div class="space-y-6">
+<!-- Registration Form -->
+<div class="sticky top-24 rounded-xl bg-white dark:bg-slate-900 p-6 shadow-xl border border-slate-100 dark:border-slate-800">
+<h3 class="text-xl font-bold mb-6">Register for Event</h3>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium mb-1">Full Name</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm focus:border-primary focus:ring-primary" readonly="" type="text" value="Alex Johnson"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Student/Staff ID</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2 text-sm focus:border-primary focus:ring-primary" readonly="" type="text" value="STU-882910"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1">Ticket Type</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm focus:border-primary focus:ring-primary">
+<option>Early Bird - $25.00</option>
+<option>Standard - $45.00</option>
+<option>Student Discount - $15.00</option>
+</select>
+</div>
+<!-- Payment Summary -->
+<div class="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 space-y-2">
+<p class="text-xs font-bold text-slate-500 uppercase">Payment Summary</p>
+<div class="flex justify-between text-sm">
+<span>Base Ticket</span>
+<span>$25.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span>Service Fee</span>
+<span>$2.50</span>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-700 pt-2 flex justify-between font-bold text-primary">
+<span>Total Amount</span>
+<span>$27.50</span>
+</div>
+</div>
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md active:scale-[0.98]" type="button">
+                                Complete Registration
+                            </button>
+<p class="text-center text-[10px] text-slate-500">By clicking, you agree to the Campus Event Terms &amp; Conditions.</p>
+</form>
+</div>
+<!-- Post-Registration Success State (Hidden by default or shown after action) -->
+<div class="rounded-xl border-2 border-dashed border-primary bg-primary/5 p-6 text-center">
+<div class="mb-4 flex justify-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</div>
+</div>
+<h4 class="text-lg font-bold">Successfully Registered!</h4>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Scan this QR code at the entrance on event day.</p>
+<div class="mt-6 flex flex-col items-center">
+<div class="relative p-2 bg-white rounded-xl shadow-inner border border-slate-100">
+<!-- QR Placeholder using CSS/Material Symbols -->
+<div class="flex h-40 w-40 items-center justify-center">
+<span class="material-symbols-outlined text-[140px] text-slate-800">qr_code_2</span>
+</div>
+</div>
+<p class="mt-3 text-xs font-mono text-slate-500">TKT-2024-XJ992</p>
+</div>
+<div class="mt-6 flex gap-2">
+<button class="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 py-2 text-xs font-bold hover:bg-white dark:hover:bg-slate-800">
+<span class="material-symbols-outlined align-middle text-sm mr-1">download</span>Save PDF
+                            </button>
+<button class="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 py-2 text-xs font-bold hover:bg-white dark:hover:bg-slate-800">
+<span class="material-symbols-outlined align-middle text-sm mr-1">calendar_add_on</span>Add to Cal
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-12">
+<div class="mx-auto max-w-7xl px-4 text-center">
+<p class="text-sm text-slate-500">© 2024 Smart Campus Portal. All rights reserved.</p>
+<div class="mt-4 flex justify-center gap-6 text-sm font-medium">
+<a class="hover:text-primary" href="#">Support</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Contact Admin</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
