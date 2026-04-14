@@ -156,11 +156,11 @@ const PaymentVerification = () => {
                       <div>
                          <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-2">Attached Proof</p>
                          <button 
-                            onClick={() => setSelectedScreenshot(`http://localhost:4000/media/${payment.paymentScreenshot}`)}
+                            onClick={() => setSelectedScreenshot(`${import.meta.env.VITE_API_URL || "http://localhost:4000"}/media/${payment.paymentScreenshot}`)}
                             className="w-full aspect-video bg-gray-100 dark:bg-slate-800 rounded-xl overflow-hidden relative group border border-gray-200 dark:border-slate-700 block"
                          >
                             <img 
-                               src={`http://localhost:4000/media/${payment.paymentScreenshot}`} 
+                               src={`${import.meta.env.VITE_API_URL || "http://localhost:4000"}/media/${payment.paymentScreenshot}`} 
                                alt="Payment Proof" 
                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />

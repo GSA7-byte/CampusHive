@@ -1,7 +1,7 @@
 import React from "react";
 
 const EventBanner = ({ banner, title, className = "" }) => {
-  const bannerSrc = banner ? `http://localhost:4000/media/${banner}` : null;
+  const bannerSrc = banner ? `${import.meta.env.VITE_API_URL || "http://localhost:4000"}/media/${banner}` : null;
 
   if (bannerSrc) {
     return (

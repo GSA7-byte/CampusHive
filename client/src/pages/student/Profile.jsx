@@ -251,7 +251,7 @@ const Profile = () => {
                <div className="relative mb-6 inline-block">
                   <div className="size-28 md:size-32 rounded-[2rem] bg-blue-50 text-primary border-4 border-white shadow-xl flex items-center justify-center text-4xl font-black shrink-0 mx-auto overflow-hidden">
                      {user?.profile ? (
-                        <img src={`http://localhost:4000/media/${user.profile}`} alt="Profile" className="w-full h-full object-cover" />
+                        <img src={`${import.meta.env.VITE_API_URL || "http://localhost:4000"}/media/${user.profile}`} alt="Profile" className="w-full h-full object-cover" />
                      ) : (
                         <>{user?.firstName?.[0]}{user?.lastName?.[0]}</>
                      )}

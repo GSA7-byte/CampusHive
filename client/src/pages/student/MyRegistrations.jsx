@@ -72,7 +72,7 @@ const MyRegistrations = () => {
    };
 
     const handleDownloadGuide = () => {
-      window.open("http://localhost:4000/media/guides/student_guide.pdf", "_blank");
+      window.open(`${import.meta.env.VITE_API_URL || "http://localhost:4000"}/media/guides/student_guide.pdf`, "_blank");
     };
 
    const formatDate = (dateStr) => {

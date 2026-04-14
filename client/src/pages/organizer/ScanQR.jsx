@@ -174,7 +174,7 @@ const ScanQR = () => {
               <button 
                 onClick={() => {
                   if (csvUrl) {
-                    window.open(`http://localhost:4000${csvUrl}`, "_blank");
+                    window.open(`${import.meta.env.VITE_API_URL || "http://localhost:4000"}${csvUrl}`, "_blank");
                     toast.success("Downloading report...");
                   } else {
                     toast.error("No scans recorded yet");

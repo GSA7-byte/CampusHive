@@ -50,7 +50,7 @@ const EventAttendees = () => {
     fetchRosterAndFeedback();
 
     // Socket Integration
-    const socket = io("http://localhost:4000");
+    const socket = io(import.meta.env.VITE_API_URL || "http://localhost:4000");
     socket.emit("join", eventId); // Assuming join works for rooms too or needs adjustment
 
     socket.on("attendanceUpdated", (data) => {
